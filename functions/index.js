@@ -20,8 +20,8 @@ const onConnectionsUpdate = functions.firestore.document("Connections/{id}").onW
     console.log(change.before.data());
     console.log(change.after.data());
 
-    const coachID = change.before.data().coach;
-    const userID = change.before.data().user;
+    const coachID = change.after.data().coach;
+    const userID = change.after.data().user;
 
     let coachProfile = {};
     let userProfile = {};
